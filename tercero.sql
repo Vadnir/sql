@@ -59,3 +59,16 @@ select cod_edit from editoriales where editoriales.cod_edit = 300;
 insert all into libro (isbn, titulo, autor, cod_edit)
 values (20020, 'La Chica del Tren', 'Pm Hawkins', cod_edit)
 select cod_edit from editoriales where editoriales.cod_edit = 300;
+
+
+--asociar un libro con su editorial y mostrar todas las caracteristicas del mismo
+select * from editoriales,libro where editoriales.cod_edit = libro.cod_edit;
+
+--asociar un libro con su editorial y mostrar algunas caracteristicas del mismo
+select editoriales.cod_edit, editoriales.nombre_edit, libro.titulo from editoriales, libro where editoriales.cod_edit = libro.cod_edit;
+
+--mostrar todos los libros con un cierto codigo de editorial
+select titulo, autor, cod_edit from libro where cod_edit = 100;
+
+-- monstrar un libro con su titulo autor y nombre de editorial
+select libro.autor, libro.titulo, editoriales.nombre_edit from editoriales, libro where editoriales.cod_edit = libro.cod_edit;
